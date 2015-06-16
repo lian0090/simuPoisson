@@ -1,0 +1,4 @@
+echo exportPattern(\”.”\) >> NAMESPACE
+R CMD check simuPoisson
+R CMD INSTALL simuPoisson
+scp -r simuPoisson $msi:MAB/code

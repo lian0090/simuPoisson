@@ -1,0 +1,10 @@
+Package: simuPoisson
+Version: 1.0.0
+Date: 2014-3-20
+Author: Lian Lian 
+Maintainer: Lian Lian <lian0090@umn.edu>
+Title: Simulate F2 populations
+NeedsCompilation: yes
+Description: This is a package for simulating F2 populations that samples recombination from a truncated poisson distribution
+License: GPL-2
+
