@@ -25,7 +25,10 @@ install_github("lian0090/simuPoisson")
 
 
 ## Example
-
+```R
 library(simuPoisson)
 data(parentsGeno)
 data(map)
+#simulate 10 individuals
+progeny=simuPoisson(parentsGeno,map$chr,map$cM,10)
+```
