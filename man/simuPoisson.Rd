@@ -6,7 +6,7 @@
 	simuPoisson(parentsGeno,chr,cM,N)
 	}
 \arguments{
-\item{parentsGeno}{ genotype matrix for parents on all chromosomes: a data.frame or matrix with two rows, each row represent the marker gentoypes for one parent }
+\item{parentsGeno}{ genotype matrix for parents on all chromosomes: a data.frame or matrix with two rows, each row represent the marker gentoypes for one parent. Genotypes must be coded additively: the heterozygotes genotype must be coded as half the two homozygotes gentoypes }
 \item{chr}{  a vector of size p for the chromosome numbers of all markers }
 \item{cM}{a vector of size p for the centiMorgan map positions for each marker}
 \item{N}{ total number of lines to simulate }
