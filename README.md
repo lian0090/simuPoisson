@@ -1,7 +1,5 @@
 # simuPoisson
-Simulate F2 populations based on Poisson distribution for the number of recombinants
-
-This is currently only for F2 populations.
+Simulate F2 populations based on Poisson distribution for the number of cross-over events
 
 For each chromosome, a random haplotype was sampled as either from parent A or parent B, with crossing over occurring at random. The expected number of crossovers (L) in this haplotype was the length of the chromosome in Morgans, whereas the observed number of crossovers for the haplotype was sampled from a Poisson distribution with a mean of L (with restrictions that the number of cross-over should be confined to the 0.025 and 0.975 quantile of the Poisson distribution). Crossover positions were randomly sampled along a chromosome according to a uniform distribution. To account for interference, two adjacent crossovers were arbitrarily assumed to be at least 10 cM from each other. 
 
