@@ -1,43 +1,30 @@
 \name{simuPoisson}
 \alias{simuPoisson}
-\alias{samplegamete}
-\alias{samplegametechr}
 \title{simulate genotypes from Poisson process}
-\description{Simulate recombination form Poisson process}
+\description{Simulate recombination from Poisson process}
 \usage{
-	simuPoisson(fpgenomat,map,gtype,nptotal,...)
-	samplegamete(fpgenomat,map,...)
-	samplegametechr(fpchrmat,mapchr,...)
+	simuPoisson(parentsGeno,chr,cM,N)
 	}
 \arguments{
-\item{fpgenomat}{ genotype matrix for parents on all chromosomes: a data.frame or matrix with 2*nmar, colnames should be mknames }
-\item{map}{ a data.frame with nmar*(3-4), colnames should include mkname, chr, pos }
-\item{gtype}{ the cross type of the project:F2,DH }
-\item{nptotal}{ total number of lines to simulate }
-\item{fpchrmat}{fpgenomat for a single chromosome}
+\item{parentsGeno}{ genotype matrix for parents on all chromosomes: a data.frame or matrix with two rows, each row represent the marker gentoypes for one parent }
+\item{chr}{  a vector of size p for the chromosome numbers of all markers }
+\item{cM}{a vector of size p for the centiMorgan map positions for each marker}
+\item{N}{ total number of lines to simulate }
 \item{mapchr}{map for a single chromosome}
-\item{\dots}{ savedir: the save directory of the output file, if NULL or not specified, the results will not be saved;
-projectname:if savedir is true, the file will be saved as projectname.rds;
-}
 }
 \details{
 simulation of genotypes is done for each individual chromosome.
-minimum and maximum number of recombinations cut off based on Morgan map distance is based on the 95\% quantile of Poisson distribution
+minimum and maximum number of recombinations was set up based on the 95\% quantile of Poisson distribution
 minrecmb=qpois(0.025,chrlength/100,lower.tail=T)
 maxrecmb=qpois(0.975,chrlength/100,lower.tail=T)
 	
 }
 \value{
-\item{samplegametechr}{returns a gamete on a single chromosome}
-\item{samplegamete}{returns gamete on all chromosomes}
-\item{simuPoisson}{returns a combinedgeno object first four rows are map_chr and map_pos,parent genotypes, colnames are "LINE" and marker names, other rows are marker genotypes for the simulated progenies} 
+\item{simuPoisson}{returns a matrix with N rows, each row is the simulated genotype for an individual} 
 }
 \author{Lian Lian}
 \examples{
-	data(fpgenomat)
+	data(parentsGeno)
 	data(map)
-dat=simuPoisson(fpgenomat,map,"F2",10)
-dat[1:10,1:10]
-samplegamete(fpgenomat[,1:300],map[1:300,])
-samplegametechr(fpgenomat[,1:30],map[1:30,])
+dat=simuPoisson(parentsGeno,map$chr,map$cM,10)
 }
