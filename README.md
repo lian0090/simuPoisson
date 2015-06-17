@@ -1,6 +1,12 @@
 # simuPoisson
 Simulate F2 populations based on Poisson distribution for the number of recombinants
 
+This is currently only for F2 populations.
+
+     (1) For each chrosome, number of cross-over events is sampled from a truncated Poisson distribution 
+     (2) For each coss-over events, the position of this event on the chrosome is sampled from a uniform distribution along the chrosome intervals. The restrition is that two cross-over events need to be 20 cM distance from each other. 
+ 
+
 ## Install
 If `devtools` is not installed, install devtools first. 
 
