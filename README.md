@@ -3,9 +3,8 @@ Simulate F2 populations based on Poisson distribution for the number of recombin
 
 This is currently only for F2 populations.
 
-     (1) For each chrosome, number of cross-over events is sampled from a truncated Poisson distribution 
-     (2) For each coss-over events, the position of this event on the chrosome is sampled from a uniform distribution along the chrosome intervals. The restrition is that two cross-over events need to be 20 cM distance from each other. 
- 
+For each chromosome, a random haplotype was sampled as either from parent A or parent B, with crossing over occurring at random. The expected number of crossovers (L) in this haplotype was the length of the chromosome in Morgans, whereas the observed number of crossovers for the haplotype was sampled from a Poisson distribution with a mean of L (with restrictions that the number of cross-over should be confined to the 0.025 and 0.975 quantile of the Poisson distribution). Crossover positions were randomly sampled along a chromosome according to a uniform distribution. To account for interference, two adjacent crossovers were arbitrarily assumed to be at least 10 cM from each other. 
+
 
 ## Install
 If `devtools` is not installed, install devtools first. 
