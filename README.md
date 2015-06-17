@@ -18,7 +18,7 @@ install_github("lian0090/simuPoisson")
 `simuPoisson(parentsGeno,chr,cM,N)`
 
 - Arguments
-    - `parentsGeno`: marker genotypes for two parents. Each row is an individual. Genotypes must be coded additively: the coded value for heterozygotes must be half the coded value of the two homozygotes. For example, `-1,0,1` or `0,1,2`. 
+    - `parentsGeno`: a `2 x p` matrix or data.frame of marker genotypes for two parents. Each row is an individual. p is the number of markers. Genotypes must be coded additively: the coded value for heterozygotes must be half the coded value of the two homozygotes. For example, `-1,0,1` or `0,1,2`. 
     - `chr`: a vector of size p for the chromosome numbers of all markers
     - `cM`: a vector of size p for the centiMorgan map positions for each marker
     - `N`: total number of lines to simulate
